@@ -3,7 +3,7 @@ from fastapi.testclient import TestClient
 from app import app
 from repositories.client_repository import InMemoryClientRepository
 from services.client_service import ClientService
-from core.container import get_client_service
+from core.container import get_client_service_db as get_client_service
 
 # python -m pytest -q --cov=api.clients --cov-report=term-missing
 

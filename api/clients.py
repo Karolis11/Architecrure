@@ -2,7 +2,7 @@ from typing import List
 from fastapi import APIRouter, Depends, Response
 from models.client import Client, ClientIn
 from services.client_service import ClientService
-from core.container import get_client_service
+from core.container import get_client_service_db as get_client_service
 
 router = APIRouter(prefix="/clients", tags=["clients"])
 

@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Request, Depends, HTTPException
 from fastapi.responses import HTMLResponse, RedirectResponse
 from services.client_service import ClientService
-from core.container import get_client_service
-from views.templates import render
+from core.container import get_client_service_db as get_client_service
+from views.renderer import render
 from pydantic import ValidationError
 from models.client import ClientIn
 
