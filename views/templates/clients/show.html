@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0">Client #{{ c.id }}</h2>
+  <p><strong>Name:</strong> {{ c.full_name }}</p>
+  <p><strong>Email:</strong> {{ c.email }}</p>
+  <p><strong>Phone:</strong> {{ c.phone }}</p>
+  <p><strong>Age:</strong> {{ c.age }}</p>
+  <div class="actions">
+    <a class="btn secondary" href="/clients/{{ c.id }}/edit">Edit</a>
+    <a class="btn link" href="/clients">Back</a>
+  </div>
+</div>
+{% endblock %}

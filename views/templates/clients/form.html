@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0">{{ heading }}</h2>
+  <form method="post" action="{{ action }}">
+    {% if method != 'POST' %}
+      <input type="hidden" name="_method" value="{{ method }}" />
+    {% endif %}
+    <div class="field">
+      <label for="full_name">Full name</label>
+      <input id="full_name" name="full_name" value="{{ values.full_name or '' }}" />
+      {% if errors.full_name %}<div class="error">{{ errors.full_name }}</div>{% endif %}
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" value="{{ values.email or '' }}" />
+      {% if errors.email %}<div class="error">{{ errors.email }}</div>{% endif %}
+    </div>
+    <div class="field">
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" value="{{ values.phone or '' }}" />
+      {% if errors.phone %}<div class="error">{{ errors.phone }}</div>{% endif %}
+    </div>
+    <div class="field">
+      <label for="age">Age</label>
+      <input id="age" name="age" value="{{ values.age or '' }}" />
+      {% if errors.age %}<div class="error">{{ errors.age }}</div>{% endif %}
+    </div>
+    <div class="actions">
+      <input type="submit" value="Save" />
+      <a class="btn link" href="/clients">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

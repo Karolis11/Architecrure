@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0">Clients <span class="badge">{{ clients|length }}</span></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Age</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in clients %}
+      <tr>
+        <td>{{ c.id }}</td>
+        <td><a href="/clients/{{ c.id }}">{{ c.full_name }}</a></td>
+        <td>{{ c.email }}</td>
+        <td>{{ c.phone }}</td>
+        <td>{{ c.age }}</td>
+        <td class="actions">
+          <a class="btn secondary" href="/clients/{{ c.id }}/edit">Edit</a>
+          <form class="inline" method="post" action="/clients/{{ c.id }}/delete" onsubmit="return confirm('Delete this client?')">
+            <input type="submit" value="Delete"/>
+          </form>
+        </td>
+      </tr>
+      {% else %}
+      <tr><td colspan="6">No clients yet. <a href="/clients/new">Create one</a>.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

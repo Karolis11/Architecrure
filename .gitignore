@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.log
+
+# Test/coverage
+.pytest_cache/
+htmlcov/
+.coverage*
+
+# IDE/mac
+.vscode/
+.idea/
+.DS_Store
+
+# App artifacts
+app.db
+*.sqlite3
